@@ -9,13 +9,12 @@ def askBinInput():
 
 # Crea lista ordinata che rappresenta numero binario
 def rappbin(byn, numbits):
-    i = byn
     byn_2 = []
-    while i > 0:
-        byn_2.insert(0, i%2)
-        i = i // 2
+    while byn > 0:
+        byn_2.insert(0, byn%2)
+        byn = byn // 2
     # filler bits
-    for i in range(numbits-len(byn_2)):
+    for i in range(numbits - len(byn_2)):
         byn_2.insert(0, 0)
     return byn_2
 
@@ -34,7 +33,7 @@ def invc2(byn, numbits):
     for i in range(1, numbits):
         if byn_2[i] != 0:
             count += 1
-    if count == 0 and byn_2[0]==1:
+    if count == 0 and byn_2[0] == 1:
         print("non rappresentabile")
     # se passa controllo, inverti
     else:
@@ -47,7 +46,7 @@ def invc2(byn, numbits):
             else:
                 i -= 1
                 oppc2.insert(0, 0)
-        for j in range(i-1, -1, -1):
+        for j in range(i - 1, -1, -1):
             oppc2.insert(0, int(not byn_2[j]))
     return oppc2
 
