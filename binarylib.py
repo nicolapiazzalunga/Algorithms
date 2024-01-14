@@ -1,15 +1,15 @@
 # Input di numero binario
-def askBinInput():
-    numbits = int(input("Inserire numero di bit: "))
+def askBinInput(numbits):
     byn = int(input("Inserire numero binario: "), 2)
     if byn >= 2**numbits:
         print("OVERFLOW")
     else:
-        return byn, numbits
+        return byn
 
 # Crea lista ordinata che rappresenta numero binario
 def rappbin(byn, numbits):
     byn_2 = []
+    # consuma byn
     while byn > 0:
         byn_2.insert(0, byn%2)
         byn = byn // 2
@@ -55,9 +55,24 @@ def rapp10(byn, numbits):
     dec = 0
     sign = 1
     byn_2 = rappbin(byn, numbits)
+    # se negativo calcola modulo e imposta segno
     if byn_2[0] != 0:
         byn_2 = invc2(byn, numbits)
         sign = -1
+    # conversione
     for i in range(1, numbits):
         dec += byn_2[i] * (2**(numbits - i - 1))
     return sign * dec
+
+# half-adder
+def halfadder(bit1, bit2):
+    sum = int(bit1 != bit2)
+    carry = int(bit1 and bit2)
+    return sum, carry
+
+# full-adder
+def fulladder(byn1, byn2, cin):
+    halfsum, cout1 = halfadder(byn1, byn2)
+    fullsum, cout2 = halfadder(halfsum, cin)
+    cout = int(cout1 or cout2)
+    return fullsum, cout
