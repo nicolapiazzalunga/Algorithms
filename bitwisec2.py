@@ -34,7 +34,7 @@ if maxnumbits == minnumbits:
         print(f"Output carry: {bin(outputcarry)[2:].zfill(numbits)}")
     print("===============")
     print(f"Final Output: {bin(output)[2:].zfill(numbits)}")
-    print(f"Check: {bin(byn1 + byn2)[2:].zfill(numbits)}")
+    print(f"Check:        {bin(byn1 + byn2)[2:].zfill(numbits)}")
 else:
     print("------------")
     print("OVERFLOW")
