@@ -28,13 +28,13 @@ if maxnumbits == minnumbits:
         inputcarry = outputcarry
         print(f"Half adder: {bin(halfadder)[2:].zfill(numbits)}")
         print(f"Full adder: {bin(fulladder)[2:].zfill(numbits)}")
-        print(f"Output: {bin(output).zfill(numbits)}")
+        print(f"Output: {bin(output)[2:].zfill(numbits)}")
         print(f"Half carry 1: {bin(halfcarry1)[2:].zfill(numbits)}")
         print(f"Half carry 2: {bin(halfcarry2)[2:].zfill(numbits)}")
         print(f"Output carry: {bin(outputcarry)[2:].zfill(numbits)}")
     print("===============")
-    print(f"Final Output {output}")
-    print(f"Check: {byn1 + byn2}")
+    print(f"Final Output: {bin(output)[2:].zfill(numbits)}")
+    print(f"Check: {bin(byn1 + byn2)[2:].zfill(numbits)}")
 else:
     print("------------")
     print("OVERFLOW")
