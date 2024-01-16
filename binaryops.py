@@ -31,10 +31,9 @@ def main():
     # # stampa numero binario
     # print("Il numero binario inserito è: ", end="")
     # bb.stampabin(byn_2)
-    # # Calcola l'inverso c2
-    # print("Il numero opposto c2 è: ", end="")
-    # oppc2 = bb.invc2(byn, numbits)
-    # bb.binarylib.stampabin(oppc2)
+    # Calcola l'opposto c2
+    print("Il numero opposto c2 è: ", end="")
+    oppc2 = bb.oppc2(byn1, numbits)
     # # Calcola la rappresentazione decimale
     # dec = bb.rapp10(byn, numbits)
     # print(f"Il suo corrispondente b10 è: {dec}")
