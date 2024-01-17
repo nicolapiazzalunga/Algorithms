@@ -52,7 +52,7 @@ def adder(byn1, byn2):
             print(f"Input carry:  {bin(inputcarry)[2:].zfill(numbits)}")
             halfadder = bitvalue1 ^ bitvalue2
             fulladder = inputcarry ^ halfadder
-            output = output ^ fulladder
+            output ^= fulladder
             halfcarry1 = bitvalue1 & bitvalue2
             halfcarry2 = inputcarry & halfadder
             outputcarry = (halfcarry1 | halfcarry2) << 1
