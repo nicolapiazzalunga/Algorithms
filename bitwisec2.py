@@ -1,8 +1,8 @@
 import sys
 
 def main():
-    byn1 = -15785555
-    byn2 = -56325643
+    byn1 = 750
+    byn2 = -48
 
     adder(byn1, byn2)
 
@@ -16,6 +16,7 @@ def preprocess(byn):
 # convert output into decimal
 def b10out(byn):
     dec = 0
+    sign = 1
     numbits = sys.getsizeof(byn)
     # if negative, inverti segno
     if byn & (1 << (numbits - 1)):
