@@ -10,7 +10,7 @@ def main():
 def preprocess(byn):
     if byn < 0:
         mask = (1 << sys.getsizeof(byn)) - 1
-        byn = (abs(byn) ^ mask) + 1
+        byn = ((~byn + 1) ^ mask) + 1
     return byn
 
 # convert output into decimal
